@@ -1,0 +1,229 @@
+/* Root styling */
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-background-color: linear-gradient(to bottom right, #667eea 0%, #764ba2 100%);
+}
+
+/* Title and headers */
+.title-label {
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 3);
+}
+
+.subtitle-label {
+    -fx-text-fill: #f0f0f0;
+}
+
+.page-title {
+    -fx-text-fill: white;
+}
+
+/* Buttons */
+.primary-button {
+    -fx-background-color: linear-gradient(to bottom, #4CAF50, #45a049);
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 2);
+}
+
+.primary-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #45a049, #3d8b40);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.secondary-button {
+    -fx-background-color: linear-gradient(to bottom, #2196F3, #1976D2);
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 2);
+}
+
+.secondary-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #1976D2, #1565C0);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.danger-button {
+    -fx-background-color: linear-gradient(to bottom, #f44336, #d32f2f);
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 2);
+}
+
+.danger-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #d32f2f, #c62828);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.success-button {
+    -fx-background-color: linear-gradient(to bottom, #FF9800, #F57C00);
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 2);
+}
+
+.success-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #F57C00, #E65100);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.success-button:disabled {
+    -fx-background-color: #cccccc;
+    -fx-opacity: 0.6;
+}
+
+.home-button {
+    -fx-background-color: linear-gradient(to bottom, #9C27B0, #7B1FA2);
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 2);
+}
+
+.home-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #7B1FA2, #6A1B9A);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* Sections */
+.header-section {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);
+}
+
+.form-section {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 2);
+}
+
+.footer-section {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-alignment: center;
+}
+
+.section-header {
+    -fx-text-fill: #333;
+}
+
+/* Text fields and combo boxes */
+.text-field, .combo-box {
+    -fx-background-radius: 5;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5;
+}
+
+.text-field:focused, .combo-box:focused {
+    -fx-border-color: #667eea;
+    -fx-border-width: 2;
+}
+
+/* Table styling */
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+}
+
+.table-view .column-header {
+    -fx-background-color: #667eea;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-cell {
+    -fx-border-color: transparent;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #e3f2fd;
+}
+
+/* Credit label */
+.credit-label {
+    -fx-text-fill: #FF5722;
+}
+
+/* Award/Result page styling */
+.award-header {
+    -fx-background-color: linear-gradient(to bottom, #FFD700, #FFA500);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 3);
+}
+
+.award-title {
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 5, 0, 0, 2);
+}
+
+.gpa-summary-box {
+    -fx-background-color: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
+    -fx-background-radius: 15;
+    -fx-border-color: #2196F3;
+    -fx-border-width: 3;
+    -fx-border-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(33, 150, 243, 0.4), 15, 0, 0, 3);
+}
+
+.gpa-number {
+    -fx-text-fill: #1565C0;
+    -fx-effect: dropshadow(gaussian, rgba(21, 101, 192, 0.3), 5, 0, 0, 2);
+}
+
+.gpa-value, .gpa-scale {
+    -fx-text-fill: #0D47A1;
+}
+
+.credit-value {
+    -fx-text-fill: #FF6F00;
+}
+
+.courses-header {
+    -fx-text-fill: #333;
+    -fx-underline: true;
+}
+
+.course-result-box {
+    -fx-background-color: #f5f5f5;
+    -fx-background-radius: 8;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1);
+}
+
+.course-header {
+    -fx-font-weight: bold;
+    -fx-text-fill: #1976D2;
+    -fx-font-size: 16px;
+}
+
+.grade-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #4CAF50;
+}
+
+.certificate-footer {
+    -fx-text-fill: #666;
+}
+
+.result-footer {
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* ScrollPane */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}

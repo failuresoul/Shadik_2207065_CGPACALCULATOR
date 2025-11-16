@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.GPAResultController">
+    <top>
+        <VBox alignment="CENTER" spacing="15.0" styleClass="award-header" BorderPane.alignment="CENTER">
+            <children>
+                <Label styleClass="award-title" text="🎓 Academic Performance Certificate 🎓">
+                    <font>
+                        <Font name="System Bold" size="36.0" />
+                    </font>
+                </Label>
+                <Label text="Grade Point Average Report">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="resultDateLabel" text="Date: November 15, 2025">
+                    <font>
+                        <Font name="System Italic" size="14.0" />
+                    </font>
+                </Label>
+                <Separator prefWidth="600.0" />
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+        </VBox>
+    </top>
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" BorderPane.alignment="CENTER">
+            <content>
+                <VBox spacing="20.0">
+                    <children>
+                        <VBox alignment="CENTER" spacing="15.0" styleClass="gpa-summary-box">
+                            <children>
+                                <Label text="Final Grade Point Average">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER" spacing="10.0">
+                                    <children>
+                                        <Label styleClass="gpa-value" text="GPA: ">
+                                            <font>
+                                                <Font name="System Bold" size="28.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="gpaLabel" styleClass="gpa-number" text="0.00">
+                                            <font>
+                                                <Font name="System Bold" size="48.0" />
+                                            </font>
+                                        </Label>
+                                        <Label styleClass="gpa-scale" text="/ 4.00">
+                                            <font>
+                                                <Font name="System Bold" size="28.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                                <Label text="Total Credits Completed:">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="totalCreditsLabel" styleClass="credit-value" text="0.0">
+                                    <font>
+                                        <Font name="System Bold" size="24.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
+                            </padding>
+                        </VBox>
+
+                        <Separator />
+
+                        <VBox spacing="10.0">
+                            <children>
+                                <Label styleClass="courses-header" text="Course Details">
+                                    <font>
+                                        <Font name="System Bold" size="24.0" />
+                                    </font>
+                                </Label>
+                                <VBox fx:id="coursesVBox" spacing="15.0">
+                                    <!-- Courses will be added dynamically here -->
+                                </VBox>
+                            </children>
+                        </VBox>
+
+                        <Separator />
+
+                        <VBox alignment="CENTER" spacing="10.0" styleClass="certificate-footer">
+                            <children>
+                                <Label text="This certificate validates the academic achievement">
+                                    <font>
+                                        <Font name="System Italic" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label text="━━━━━━━━━━━━━━━━━━━━━━━━━━━">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Keep up the excellent work!">
+                                    <font>
+                                        <Font name="System Bold Italic" size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                        </VBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="30.0" left="40.0" right="40.0" top="20.0" />
+                    </padding>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" spacing="20.0" styleClass="result-footer" BorderPane.alignment="CENTER">
+            <children>
+                <Button mnemonicParsing="false" onAction="#goBackHome" prefHeight="40.0" prefWidth="180.0" styleClass="home-button" text="Back to Home">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </HBox>
+    </bottom>
+</BorderPane>

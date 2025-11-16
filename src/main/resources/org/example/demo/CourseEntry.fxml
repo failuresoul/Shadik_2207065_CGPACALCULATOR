@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.CourseEntryController">
+    <top>
+        <VBox alignment="CENTER" spacing="10.0" styleClass="header-section" BorderPane.alignment="CENTER">
+            <children>
+                <Label styleClass="page-title" text="Course Entry">
+                    <font>
+                        <Font name="System Bold" size="32.0" />
+                    </font>
+                </Label>
+                <Label text="Add your courses and grades below">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            </children>
+            <padding>
+                <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+            </padding>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="15.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox spacing="15.0" styleClass="form-section">
+                    <children>
+                        <Label styleClass="section-header" text="Course Information">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Separator />
+                        <GridPane hgap="15.0" vgap="12.0">
+                            <children>
+                                <Label text="Course Name:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="courseNameField" prefWidth="250.0" promptText="e.g., Introduction to Programming" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                <Label text="Course Code:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="courseCodeField" prefWidth="250.0" promptText="e.g., CSE101" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                <Label text="Course Credit:" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="courseCreditField" prefWidth="250.0" promptText="e.g., 3.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                                <Label text="Teacher 1 Name:" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="teacher1Field" prefWidth="250.0" promptText="Primary instructor" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                                <Label text="Teacher 2 Name:" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="teacher2Field" prefWidth="250.0" promptText="Secondary instructor (optional)" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                                <Label text="Grade:" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="gradeComboBox" prefWidth="250.0" promptText="Select grade" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                            </children>
+                        </GridPane>
+                        <HBox alignment="CENTER" spacing="15.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#addCourse" prefWidth="150.0" styleClass="primary-button" text="Add Course">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#deleteCourse" prefWidth="150.0" styleClass="secondary-button" text="Delete Selected">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#resetAll" prefWidth="150.0" styleClass="danger-button" text="Reset All">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+                    </padding>
+                </VBox>
+
+                <VBox spacing="10.0" styleClass="form-section" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Label styleClass="section-header" text="Added Courses">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Separator />
+                        <TableView fx:id="courseTable" prefHeight="250.0" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="nameColumn" minWidth="150.0" prefWidth="150.0" text="Course Name" />
+                                <TableColumn fx:id="codeColumn" minWidth="100.0" prefWidth="100.0" text="Code" />
+                                <TableColumn fx:id="creditColumn" minWidth="70.0" prefWidth="70.0" text="Credit" />
+                                <TableColumn fx:id="teacher1Column" minWidth="130.0" prefWidth="130.0" text="Teacher 1" />
+                                <TableColumn fx:id="teacher2Column" minWidth="130.0" prefWidth="130.0" text="Teacher 2" />
+                                <TableColumn fx:id="gradeColumn" minWidth="70.0" prefWidth="70.0" text="Grade" />
+                            </columns>
+                        </TableView>
+                    </children>
+                    <padding>
+                        <Insets bottom="15.0" left="20.0" right="20.0" top="10.0" />
+                    </padding>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+            </padding>
+        </VBox>
+    </center>
+    <bottom>
+        <VBox spacing="15.0" styleClass="footer-section" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER" spacing="20.0">
+                    <children>
+                        <Label text="Total Required Credits:">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="totalCreditField" prefWidth="100.0" promptText="12.0" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" spacing="20.0">
+                    <children>
+                        <Label text="Credits Entered:">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="currentCreditLabel" styleClass="credit-label" text="0.0 / 0.0">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <Button fx:id="calculateGPAButton" mnemonicParsing="false" onAction="#calculateGPA" prefHeight="45.0" prefWidth="200.0" styleClass="success-button" text="Calculate GPA">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="15.0" />
+            </padding>
+        </VBox>
+    </bottom>
+</BorderPane>

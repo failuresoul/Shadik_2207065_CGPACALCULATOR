@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.HomeController">
+    <center>
+        <VBox alignment="CENTER" spacing="30.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label styleClass="title-label" text="Student GPA Calculator">
+                    <font>
+                        <Font name="System Bold" size="42.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" styleClass="subtitle-label" text="Calculate your academic performance with ease" textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <VBox alignment="CENTER" spacing="15.0">
+                    <children>
+                        <Label alignment="CENTER" text="Welcome to the GPA Calculator!" textAlignment="CENTER">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" text="This application helps you:" textAlignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label text="✓ Add multiple courses with detailed information" />
+                        <Label text="✓ Record grades and instructor details" />
+                        <Label text="✓ Calculate your cumulative GPA automatically" />
+                        <Label text="✓ View beautifully formatted results" />
+                    </children>
+                </VBox>
+                <Button mnemonicParsing="false" onAction="#startGPACalculator" prefHeight="50.0" prefWidth="250.0" styleClass="primary-button" text="Start GPA Calculator">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Button>
+            </children>
+            <padding>
+                <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+            </padding>
+        </VBox>
+    </center>
+</BorderPane>
