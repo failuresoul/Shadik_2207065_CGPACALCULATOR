@@ -15,9 +15,8 @@ public class HomeController {
     private void startGPACalculator(ActionEvent event) {
         try {
             Parent courseEntryRoot = FXMLLoader.load(getClass().getResource("CourseEntry.fxml"));
-            Scene courseEntryScene = new Scene(courseEntryRoot, 900, 700);
+            Scene courseEntryScene = new Scene(courseEntryRoot, 1550, 815);
             courseEntryScene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
-
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
             window.setScene(courseEntryScene);
             window.show();

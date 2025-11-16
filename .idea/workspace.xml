@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cea79fd5-a4fa-4dda-84ea-094cd06e78cb" name="Changes" comment="" />
+    <list default="true" id="cea79fd5-a4fa-4dda-84ea-094cd06e78cb" name="Changes" comment="2nd commit for git">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/demo/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/demo/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/demo/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/demo/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/styles.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,6 +71,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/USER/Desktop/Project/demo",
     "list.type.of.created.stylesheet": "CSS",
@@ -115,6 +126,7 @@
       <workItem from="1763292810523" duration="1564000" />
       <workItem from="1763294393849" duration="597000" />
       <workItem from="1763295004719" duration="1487000" />
+      <workItem from="1763296513086" duration="6868000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit from ide">
       <option name="closed" value="true" />
@@ -124,7 +136,23 @@
       <option name="project" value="LOCAL" />
       <updated>1763295147556</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2nd commit for git">
+      <option name="closed" value="true" />
+      <created>1763296582935</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1763296582935</updated>
+    </task>
+    <task id="LOCAL-00003" summary="2nd commit for git">
+      <option name="closed" value="true" />
+      <created>1763296632022</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1763296632022</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +188,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1st commit from ide" />
-    <option name="LAST_COMMIT_MESSAGE" value="1st commit from ide" />
+    <MESSAGE value="First_Commit&#10;&#10;I just make the basic structure of the project.Now i work on it for designing better UI/UX.And as it is my basic structure.So some functionalites doesn't work properly.For that reason i will work on it" />
+    <MESSAGE value="2nd commit for git" />
+    <option name="LAST_COMMIT_MESSAGE" value="2nd commit for git" />
   </component>
 </project>

@@ -1,28 +1,47 @@
 /* Root styling */
 .root {
     -fx-font-family: "Segoe UI", "Arial", sans-serif;
-    -fx-background-color: linear-gradient(to bottom right, #667eea 0%, #764ba2 100%);
+    -fx-background-image: url("s.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-opacity: 90%;
 }
 
 /* Title and headers */
 .title-label {
     -fx-text-fill: white;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 3);
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,1), 10, 0, 0, 3);
 }
 
 .subtitle-label {
-    -fx-text-fill: #f0f0f0;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 8, 0, 0, 2);
+    -fx-font-weight: bold;
+}
+
+.small {
+    -fx-text-fill: #00ffff;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 6, 0, 0, 1);
+    -fx-font-weight: bold;
 }
 
 .page-title {
     -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.9), 9, 0, 0, 2);
 }
 
 /* Buttons */
 .primary-button {
     -fx-background-color: linear-gradient(to bottom, #4CAF50, #45a049);
     -fx-text-fill: white;
-    -fx-background-radius: 8;
+    -fx-background-radius: 6;
     -fx-cursor: hand;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 2);
 }

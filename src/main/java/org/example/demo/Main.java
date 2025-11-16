@@ -12,7 +12,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-            Scene scene = new Scene(root, 800, 600);
+            Scene scene = new Scene(root, 1550, 815);
             scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
             primaryStage.setTitle("Student GPA Calculator");
             primaryStage.setScene(scene);
