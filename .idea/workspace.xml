@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cea79fd5-a4fa-4dda-84ea-094cd06e78cb" name="Changes" comment="Home Done">
+    <list default="true" id="cea79fd5-a4fa-4dda-84ea-094cd06e78cb" name="Changes" comment="Course Entry done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/CourseEntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/CourseEntryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/demo/CourseEntry.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/demo/CourseEntry.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/GPAResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/GPAResultController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/demo/GPAResult.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/demo/GPAResult.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/demo/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/demo/Home.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/demo/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/demo/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/CourseEntry.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/CourseEntry.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/CourseEntryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/CourseEntryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/GPAResult.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/GPAResult.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/GPAResultController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/GPAResultController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +132,7 @@
       <workItem from="1763294393849" duration="597000" />
       <workItem from="1763295004719" duration="1487000" />
       <workItem from="1763296513086" duration="7083000" />
-      <workItem from="1763343639380" duration="4043000" />
+      <workItem from="1763343639380" duration="8918000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit from ide">
       <option name="closed" value="true" />
@@ -161,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763303585157</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Course Entry done">
+      <option name="closed" value="true" />
+      <created>1763347744887</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1763347744887</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +213,7 @@
     <MESSAGE value="First_Commit&#10;&#10;I just make the basic structure of the project.Now i work on it for designing better UI/UX.And as it is my basic structure.So some functionalites doesn't work properly.For that reason i will work on it" />
     <MESSAGE value="2nd commit for git" />
     <MESSAGE value="Home Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Home Done" />
+    <MESSAGE value="Course Entry done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Course Entry done" />
   </component>
 </project>

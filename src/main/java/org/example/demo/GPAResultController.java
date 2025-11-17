@@ -75,7 +75,7 @@ public class GPAResultController {
     private void goBackHome(ActionEvent event) {
         try {
             Parent homeRoot = FXMLLoader.load(getClass().getResource("Home.fxml"));
-            Scene homeScene = new Scene(homeRoot, 800, 600);
+            Scene homeScene = new Scene(homeRoot, 1550, 815);
             homeScene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

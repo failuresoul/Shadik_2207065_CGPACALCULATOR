@@ -245,12 +245,15 @@
 .result-footer {
     -fx-background-color: rgba(255, 255, 255, 0.9);
 }
+.last{
+    -fx-text-fill: white;
+}
 
 /* ScrollPane */
 .scroll-pane {
-    -fx-background-color: transparent;
+    -fx-background-color: black;
 }
 
 .scroll-pane .viewport {
-    -fx-background-color: transparent;
+    -fx-background-color: black;
 }

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.GPAResultController">
+<BorderPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.GPAResultController">
     <top>
         <VBox alignment="CENTER" spacing="15.0" styleClass="award-header" BorderPane.alignment="CENTER">
             <children>
@@ -21,12 +21,12 @@
                 </Label>
                 <Label text="Grade Point Average Report">
                     <font>
-                        <Font size="18.0" />
+                        <Font name="System Bold" size="18.0" />
                     </font>
                 </Label>
                 <Label fx:id="resultDateLabel" text="Date: November 15, 2025">
                     <font>
-                        <Font name="System Italic" size="14.0" />
+                        <Font name="System Bold" size="14.0" />
                     </font>
                 </Label>
                 <Separator prefWidth="600.0" />
@@ -87,12 +87,12 @@
 
                         <VBox spacing="10.0">
                             <children>
-                                <Label styleClass="courses-header" text="Course Details">
+                                <Label styleClass="last" text="Course Details">
                                     <font>
                                         <Font name="System Bold" size="24.0" />
                                     </font>
                                 </Label>
-                                <VBox fx:id="coursesVBox" spacing="15.0">
+                                <VBox fx:id="coursesVBox" spacing="15.0" styleClass="scroll-plane">
                                     <!-- Courses will be added dynamically here -->
                                 </VBox>
                             </children>
@@ -102,19 +102,19 @@
 
                         <VBox alignment="CENTER" spacing="10.0" styleClass="certificate-footer">
                             <children>
-                                <Label text="This certificate validates the academic achievement">
-                                    <font>
-                                        <Font name="System Italic" size="12.0" />
-                                    </font>
+                                <Label styleClass="last" text="This certificate validates the academic achievement">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
                                 </Label>
                                 <Label text="━━━━━━━━━━━━━━━━━━━━━━━━━━━">
                                     <font>
                                         <Font size="14.0" />
                                     </font>
                                 </Label>
-                                <Label text="Keep up the excellent work!">
+                                <Label styleClass="last" text="Keep up the excellent work!">
                                     <font>
-                                        <Font name="System Bold Italic" size="14.0" />
+                                        <Font name="System Bold" size="14.0" />
                                     </font>
                                 </Label>
                             </children>
