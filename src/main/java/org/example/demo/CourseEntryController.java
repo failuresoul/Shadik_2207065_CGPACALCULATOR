@@ -160,7 +160,7 @@ public class CourseEntryController implements Initializable {
             GPAResultController controller = loader.getController();
             controller.setCourseList(courseList);
 
-            Scene gpaResultScene = new Scene(gpaResultRoot, 1550, 815);
+            Scene gpaResultScene = new Scene(gpaResultRoot, 1550, 800);
             gpaResultScene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
