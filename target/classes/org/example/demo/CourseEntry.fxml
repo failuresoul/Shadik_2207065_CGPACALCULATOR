@@ -4,18 +4,19 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.CourseEntryController">
+<BorderPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.CourseEntryController">
     <top>
         <VBox alignment="CENTER" spacing="10.0" styleClass="header-section" BorderPane.alignment="CENTER">
             <children>
@@ -24,7 +25,7 @@
                         <Font name="System Bold" size="32.0" />
                     </font>
                 </Label>
-                <Label text="Add your courses and grades below">
+                <Label styleClass="sha" text="Add your courses and grades below">
                     <font>
                         <Font size="14.0" />
                     </font>
@@ -36,7 +37,7 @@
         </VBox>
     </top>
     <center>
-        <VBox spacing="15.0" BorderPane.alignment="CENTER">
+        <VBox spacing="15.0" styleClass="header-section" BorderPane.alignment="CENTER">
             <children>
                 <VBox spacing="15.0" styleClass="form-section">
                     <children>
@@ -60,7 +61,7 @@
                                         <Font name="System Bold" size="13.0" />
                                     </font>
                                 </Label>
-                                <TextField fx:id="courseCodeField" prefWidth="250.0" promptText="e.g., CSE101" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <TextField fx:id="courseCodeField" prefWidth="250.0" promptText="e.g., CSE 2200" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
                                 <Label text="Course Credit:" GridPane.columnIndex="0" GridPane.rowIndex="2">
                                     <font>
@@ -74,14 +75,14 @@
                                         <Font name="System Bold" size="13.0" />
                                     </font>
                                 </Label>
-                                <TextField fx:id="teacher1Field" prefWidth="250.0" promptText="Primary instructor" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <TextField fx:id="teacher1Field" prefWidth="250.0" promptText="Instructor 1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
                                 <Label text="Teacher 2 Name:" GridPane.columnIndex="0" GridPane.rowIndex="4">
                                     <font>
                                         <Font name="System Bold" size="13.0" />
                                     </font>
                                 </Label>
-                                <TextField fx:id="teacher2Field" prefWidth="250.0" promptText="Secondary instructor (optional)" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <TextField fx:id="teacher2Field" prefWidth="250.0" promptText="Instructor 2" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
                                 <Label text="Grade:" GridPane.columnIndex="0" GridPane.rowIndex="5">
                                     <font>
@@ -90,6 +91,18 @@
                                 </Label>
                                 <ComboBox fx:id="gradeComboBox" prefWidth="250.0" promptText="Select grade" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                             </children>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
                         </GridPane>
                         <HBox alignment="CENTER" spacing="15.0">
                             <children>

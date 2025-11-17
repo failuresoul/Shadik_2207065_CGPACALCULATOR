@@ -21,31 +21,31 @@
                         <Font name="System Bold" size="22.0" />
                     </font>
                 </Label>
-                <VBox alignment="CENTER" prefHeight="258.0" prefWidth="605.0" spacing="15.0">
+                <VBox alignment="CENTER" prefHeight="258.0" prefWidth="605.0" spacing="15.0" styleClass="smalls">
                     <children>
-                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="342.0" styleClass="small" text="Welcome to the GPA Calculator!" textAlignment="CENTER">
+                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="342.0" styleClass="smalls" text="Welcome to the GPA Calculator!" textAlignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="22.0" />
                             </font>
                         </Label>
-                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="297.0" styleClass="small" text="This application helps you:" textAlignment="CENTER">
+                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="297.0" styleClass="smalls" text="This application helps you:" textAlignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="22.0" />
                             </font>
                         </Label>
-                        <Label prefHeight="52.0" prefWidth="375.0" styleClass="small" text="✓ Add multiple courses with detailed information">
+                        <Label prefHeight="66.0" prefWidth="428.0" styleClass="small" text="✓ Add multiple courses with detailed information">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font></Label>
-                        <Label prefHeight="50.0" prefWidth="375.0" styleClass="small" text="✓ Record grades and instructor details">
+                        <Label prefHeight="77.0" prefWidth="438.0" styleClass="small" text="✓ Record grades and instructor details">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font></Label>
-                        <Label prefHeight="55.0" prefWidth="372.0" styleClass="small" text="✓ Calculate your cumulative GPA automatically">
+                        <Label prefHeight="79.0" prefWidth="438.0" styleClass="small" text="✓ Calculate your cumulative GPA automatically">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font></Label>
-                        <Label prefHeight="54.0" prefWidth="371.0" styleClass="small" text="✓ View beautifully formatted results">
+                        <Label prefHeight="57.0" prefWidth="443.0" styleClass="small" text="✓ View beautifully formatted results">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font></Label>
