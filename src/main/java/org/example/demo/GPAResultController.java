@@ -1,4 +1,5 @@
 package org.example.demo;
+
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,15 +17,30 @@ public class GPAResultController {
     @FXML private Label gpaLabel;
     @FXML private Label totalCreditsLabel;
     @FXML private Label resultDateLabel;
+    @FXML private Label studentRollLabel;
 
     private ObservableList<Course> courseList;
+    private String rollNumber;
 
+    public void setCourseListAndRoll(ObservableList<Course> courseList, String rollNumber) {
+        this.courseList = courseList;
+        this.rollNumber = rollNumber;
+        displayResults();
+    }
+
+    // Keep backward compatibility
     public void setCourseList(ObservableList<Course> courseList) {
         this.courseList = courseList;
+        this.rollNumber = courseList.isEmpty() ? "N/A" : courseList.get(0).getRollNumber();
         displayResults();
     }
 
     private void displayResults() {
+        // Display roll number
+        if (studentRollLabel != null) {
+            studentRollLabel.setText("Student Roll Number: " + rollNumber);
+        }
+
         // Clear previous content
         coursesVBox.getChildren().clear();
 

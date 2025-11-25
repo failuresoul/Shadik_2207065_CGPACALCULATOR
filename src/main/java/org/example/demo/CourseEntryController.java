@@ -1,4 +1,5 @@
 package org.example.demo;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -36,12 +37,21 @@ public class CourseEntryController implements Initializable {
     @FXML private TableColumn<Course, String> teacher2Column;
     @FXML private TableColumn<Course, String> gradeColumn;
 
+    // Observable list for JavaFX table (UI layer)
     private ObservableList<Course> courseList = FXCollections.observableArrayList();
+
+    // Database manager instance
+    private DatabaseManager dbManager;
+
     private double totalCreditsEntered = 0.0;
     private double requiredTotalCredits = 0.0;
+    private String studentRollNumber;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // Initialize database manager (Singleton pattern)
+        dbManager = DatabaseManager.getInstance();
+
         // Initialize grade combo box
         gradeComboBox.setItems(FXCollections.observableArrayList(
                 "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "F"
@@ -60,6 +70,53 @@ public class CourseEntryController implements Initializable {
 
         // Set default total credits
         totalCreditField.setText("12.0");
+    }
+
+    /**
+     * Set the roll number from Home page
+     */
+    public void setRollNumber(String rollNumber) {
+        this.studentRollNumber = rollNumber;
+        // Load existing courses for this roll number
+        loadCoursesFromDatabase();
+    }
+
+    /**
+     * Loads all courses from database for the current student
+     */
+    private void loadCoursesFromDatabase() {
+        if (studentRollNumber == null || studentRollNumber.isEmpty()) {
+            return;
+        }
+
+        // Clear current list
+        courseList.clear();
+        totalCreditsEntered = 0.0;
+
+        // Fetch from database for this specific student
+        var courses = dbManager.getCoursesByRollNumber(studentRollNumber);
+
+        // Add to observable list
+        courseList.addAll(courses);
+
+        // Calculate total credits
+        for (Course course : courses) {
+            totalCreditsEntered += course.getCourseCredit();
+        }
+
+        // Set required credits from first load
+        if (!courses.isEmpty() && requiredTotalCredits == 0.0) {
+            requiredTotalCredits = Double.parseDouble(totalCreditField.getText());
+        }
+
+        // Update UI
+        currentCreditLabel.setText(String.format("%.1f / %.1f", totalCreditsEntered, requiredTotalCredits));
+
+        // Enable calculate button if credits met
+        if (totalCreditsEntered >= requiredTotalCredits && requiredTotalCredits > 0) {
+            calculateGPAButton.setDisable(false);
+            totalCreditField.setDisable(true);
+        }
     }
 
     @FXML
@@ -88,8 +145,9 @@ public class CourseEntryController implements Initializable {
                 return;
             }
 
-            // Create course object
+            // Create course object with roll number
             Course course = new Course(
+                    studentRollNumber,
                     courseNameField.getText(),
                     courseCodeField.getText(),
                     credit,
@@ -98,21 +156,26 @@ public class CourseEntryController implements Initializable {
                     gradeComboBox.getValue()
             );
 
-            // Add to list
-            courseList.add(course);
-            totalCreditsEntered += credit;
-            currentCreditLabel.setText(String.format("%.1f / %.1f", totalCreditsEntered, requiredTotalCredits));
+            // ✅ INSERT INTO DATABASE
+            boolean inserted = dbManager.insertCourse(course);
 
-            // Clear fields
-            clearFields();
+            if (inserted) {
+                // Add to UI list
+                courseList.add(course);
+                totalCreditsEntered += credit;
+                currentCreditLabel.setText(String.format("%.1f / %.1f", totalCreditsEntered, requiredTotalCredits));
 
-            // Show success message
-            showAlert(Alert.AlertType.INFORMATION, "Success", "Course added successfully!");
+                // Clear fields
+                clearFields();
 
-            // Enable Calculate GPA button if total credits reached
-            if (totalCreditsEntered >= requiredTotalCredits) {
-                calculateGPAButton.setDisable(false);
-                totalCreditField.setDisable(true);
+                // Show success message
+                showAlert(Alert.AlertType.INFORMATION, "Success", "Course added to database successfully!");
+
+                // Enable Calculate GPA button if total credits reached
+                if (totalCreditsEntered >= requiredTotalCredits) {
+                    calculateGPAButton.setDisable(false);
+                    totalCreditField.setDisable(true);
+                }
             }
 
         } catch (NumberFormatException e) {
@@ -124,16 +187,22 @@ public class CourseEntryController implements Initializable {
     private void deleteCourse() {
         Course selectedCourse = courseTable.getSelectionModel().getSelectedItem();
         if (selectedCourse != null) {
-            courseList.remove(selectedCourse);
-            totalCreditsEntered -= selectedCourse.getCourseCredit();
-            currentCreditLabel.setText(String.format("%.1f / %.1f", totalCreditsEntered, requiredTotalCredits));
+            // ✅ DELETE FROM DATABASE
+            boolean deleted = dbManager.deleteCourse(selectedCourse);
 
-            if (totalCreditsEntered < requiredTotalCredits) {
-                calculateGPAButton.setDisable(true);
-                totalCreditField.setDisable(false);
+            if (deleted) {
+                // Remove from UI list
+                courseList.remove(selectedCourse);
+                totalCreditsEntered -= selectedCourse.getCourseCredit();
+                currentCreditLabel.setText(String.format("%.1f / %.1f", totalCreditsEntered, requiredTotalCredits));
+
+                if (totalCreditsEntered < requiredTotalCredits) {
+                    calculateGPAButton.setDisable(true);
+                    totalCreditField.setDisable(false);
+                }
+
+                showAlert(Alert.AlertType.INFORMATION, "Deleted", "Course deleted from database successfully!");
             }
-
-            showAlert(Alert.AlertType.INFORMATION, "Deleted", "Course deleted successfully!");
         } else {
             showAlert(Alert.AlertType.WARNING, "No Selection", "Please select a course to delete!");
         }
@@ -141,14 +210,21 @@ public class CourseEntryController implements Initializable {
 
     @FXML
     private void resetAll() {
-        courseList.clear();
-        totalCreditsEntered = 0.0;
-        requiredTotalCredits = 0.0;
-        currentCreditLabel.setText("0.0 / 0.0");
-        calculateGPAButton.setDisable(true);
-        totalCreditField.setDisable(false);
-        totalCreditField.setText("12.0");
-        clearFields();
+        // ✅ DELETE ALL FROM DATABASE for this student
+        boolean deleted = dbManager.deleteAllCoursesByRollNumber(studentRollNumber);
+
+        if (deleted) {
+            courseList.clear();
+            totalCreditsEntered = 0.0;
+            requiredTotalCredits = 0.0;
+            currentCreditLabel.setText("0.0 / 0.0");
+            calculateGPAButton.setDisable(true);
+            totalCreditField.setDisable(false);
+            totalCreditField.setText("12.0");
+            clearFields();
+
+            showAlert(Alert.AlertType.INFORMATION, "Reset", "All courses cleared from database!");
+        }
     }
 
     @FXML
@@ -158,7 +234,7 @@ public class CourseEntryController implements Initializable {
             Parent gpaResultRoot = loader.load();
 
             GPAResultController controller = loader.getController();
-            controller.setCourseList(courseList);
+            controller.setCourseListAndRoll(courseList, studentRollNumber);
 
             Scene gpaResultScene = new Scene(gpaResultRoot, 1550, 800);
             gpaResultScene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());

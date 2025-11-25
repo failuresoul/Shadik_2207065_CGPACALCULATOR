@@ -3,12 +3,13 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.HomeController">
-   <bottom>
+    <bottom>
         <VBox alignment="CENTER" prefHeight="666.0" prefWidth="850.0" spacing="30.0" BorderPane.alignment="CENTER">
             <children>
                 <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="63.0" prefWidth="828.0" styleClass="title-label" text="Student GPA Calculator">
@@ -34,23 +35,40 @@
                             </font>
                         </Label>
                         <Label prefHeight="66.0" prefWidth="428.0" styleClass="small" text="✓ Add multiple courses with detailed information">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font></Label>
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font></Label>
                         <Label prefHeight="77.0" prefWidth="438.0" styleClass="small" text="✓ Record grades and instructor details">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font></Label>
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font></Label>
                         <Label prefHeight="79.0" prefWidth="438.0" styleClass="small" text="✓ Calculate your cumulative GPA automatically">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font></Label>
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font></Label>
                         <Label prefHeight="57.0" prefWidth="443.0" styleClass="small" text="✓ View beautifully formatted results">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font></Label>
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font></Label>
                     </children>
                 </VBox>
+
+                <!-- Roll Number Input Section -->
+                <VBox alignment="CENTER" spacing="10.0">
+                    <children>
+                        <Label styleClass="smalls" text="Enter Your Roll Number">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="rollNumberField" alignment="CENTER" prefWidth="300.0" promptText="e.g., 2021001" styleClass="roll-input">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </TextField>
+                    </children>
+                </VBox>
+
                 <Button alignment="CENTER" mnemonicParsing="false" onAction="#startGPACalculator" prefHeight="67.0" prefWidth="266.0" styleClass="primary-button" text="Start GPA Calculator">
                     <font>
                         <Font name="System Bold" size="16.0" />
@@ -61,5 +79,5 @@
                 <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
             </padding>
         </VBox>
-   </bottom>
+    </bottom>
 </BorderPane>

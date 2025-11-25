@@ -1,6 +1,7 @@
 package org.example.demo;
 
 public class Course {
+    private String rollNumber;
     private String courseName;
     private String courseCode;
     private double courseCredit;
@@ -9,8 +10,9 @@ public class Course {
     private String grade;
     private double gradePoint;
 
-    public Course(String courseName, String courseCode, double courseCredit,
+    public Course(String rollNumber, String courseName, String courseCode, double courseCredit,
                   String teacher1Name, String teacher2Name, String grade) {
+        this.rollNumber = rollNumber;
         this.courseName = courseName;
         this.courseCode = courseCode;
         this.courseCredit = courseCredit;
@@ -43,6 +45,7 @@ public class Course {
     }
 
     // Getters
+    public String getRollNumber() { return rollNumber; }
     public String getCourseName() { return courseName; }
     public String getCourseCode() { return courseCode; }
     public double getCourseCredit() { return courseCredit; }
@@ -52,6 +55,7 @@ public class Course {
     public double getGradePoint() { return gradePoint; }
 
     // Setters
+    public void setRollNumber(String rollNumber) { this.rollNumber = rollNumber; }
     public void setCourseName(String courseName) { this.courseName = courseName; }
     public void setCourseCode(String courseCode) { this.courseCode = courseCode; }
     public void setCourseCredit(double courseCredit) { this.courseCredit = courseCredit; }

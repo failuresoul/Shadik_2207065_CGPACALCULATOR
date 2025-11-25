@@ -4,13 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cea79fd5-a4fa-4dda-84ea-094cd06e78cb" name="Changes" comment="Final page create and edit done">
+    <list default="true" id="cea79fd5-a4fa-4dda-84ea-094cd06e78cb" name="Changes" comment="Last one">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/DatabaseManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/Course.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/CourseEntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/CourseEntryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/GPAResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/GPAResultController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/demo/CourseEntry.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/demo/CourseEntry.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/demo/GPAResult.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/demo/GPAResult.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/demo/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/demo/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/demo/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/demo/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/CourseEntry.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/CourseEntry.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/CourseEntryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/CourseEntryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/GPAResult.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/GPAResult.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/GPAResultController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/GPAResultController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/demo/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/demo/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +33,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -85,6 +98,11 @@
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
   }
 }]]></component>
   <component name="RunManager">
@@ -129,7 +147,9 @@
       <workItem from="1763296513086" duration="7083000" />
       <workItem from="1763343639380" duration="9262000" />
       <workItem from="1763375146844" duration="1501000" />
-      <workItem from="1763381481429" duration="6645000" />
+      <workItem from="1763381481429" duration="7351000" />
+      <workItem from="1763396455833" duration="432000" />
+      <workItem from="1764001408860" duration="5643000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit from ide">
       <option name="closed" value="true" />
@@ -179,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763352937193</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Last one">
+      <option name="closed" value="true" />
+      <created>1763395207651</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1763395207651</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,6 +248,7 @@
     <MESSAGE value="Home Done" />
     <MESSAGE value="Course Entry done" />
     <MESSAGE value="Final page create and edit done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final page create and edit done" />
+    <MESSAGE value="Last one" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last one" />
   </component>
 </project>

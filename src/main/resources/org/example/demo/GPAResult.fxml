@@ -24,6 +24,11 @@
                         <Font name="System Bold" size="18.0" />
                     </font>
                 </Label>
+                <Label fx:id="studentRollLabel" text="Student Roll Number: ">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
                 <Label fx:id="resultDateLabel" text="Date: November 15, 2025">
                     <font>
                         <Font name="System Bold" size="14.0" />
@@ -103,11 +108,11 @@
                         <VBox alignment="CENTER" spacing="10.0" styleClass="certificate-footer">
                             <children>
                                 <Label styleClass="last" text="This certificate validates the academic achievement">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
                                 </Label>
-                                <Label text="━━━━━━━━━━━━━━━━━━━━━━━━━━━">
+                                <Label text="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━">
                                     <font>
                                         <Font size="14.0" />
                                     </font>
