@@ -16,6 +16,22 @@ public class Main extends Application {
             scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
             primaryStage.setTitle("Student GPA Calculator");
             primaryStage.setScene(scene);
+
+            // Add shutdown hook for graceful cleanup
+            primaryStage.setOnCloseRequest(event -> {
+                System.out.println("🔄 Application closing... cleaning up resources");
+
+                // Shutdown executor service
+                DatabaseExecutorService executorService = DatabaseExecutorService.getInstance();
+                executorService.shutdown();
+
+                // Close database connection
+                DatabaseManager dbManager = DatabaseManager.getInstance();
+                dbManager.closeConnection();
+
+                System.out.println("✅ Application closed successfully!");
+            });
+
             primaryStage.show();
         } catch(Exception e) {
             e.printStackTrace();

@@ -70,6 +70,11 @@ public class CourseEntryController implements Initializable {
 
         // Set default total credits
         totalCreditField.setText("12.0");
+
+        // Add listener to total credit field to allow changes
+        totalCreditField.textProperty().addListener((observable, oldValue, newValue) -> {
+            updateRequiredCredits();
+        });
     }
 
     /**
@@ -79,6 +84,27 @@ public class CourseEntryController implements Initializable {
         this.studentRollNumber = rollNumber;
         // Load existing courses for this roll number
         loadCoursesFromDatabase();
+    }
+
+    /**
+     * Updates required credits when user changes the value
+     */
+    private void updateRequiredCredits() {
+        try {
+            if (!totalCreditField.getText().isEmpty()) {
+                requiredTotalCredits = Double.parseDouble(totalCreditField.getText());
+                currentCreditLabel.setText(String.format("%.1f / %.1f", totalCreditsEntered, requiredTotalCredits));
+
+                // Enable/disable calculate button based on credits
+                if (totalCreditsEntered >= requiredTotalCredits && requiredTotalCredits > 0) {
+                    calculateGPAButton.setDisable(false);
+                } else {
+                    calculateGPAButton.setDisable(true);
+                }
+            }
+        } catch (NumberFormatException e) {
+            // Invalid input, ignore
+        }
     }
 
     /**
@@ -115,7 +141,6 @@ public class CourseEntryController implements Initializable {
         // Enable calculate button if credits met
         if (totalCreditsEntered >= requiredTotalCredits && requiredTotalCredits > 0) {
             calculateGPAButton.setDisable(false);
-            totalCreditField.setDisable(true);
         }
     }
 
@@ -131,8 +156,8 @@ public class CourseEntryController implements Initializable {
                 return;
             }
 
-            // Set required total credits on first course addition
-            if (courseList.isEmpty() && !totalCreditField.getText().isEmpty()) {
+            // Update required total credits from field
+            if (!totalCreditField.getText().isEmpty()) {
                 requiredTotalCredits = Double.parseDouble(totalCreditField.getText());
             }
 
@@ -174,7 +199,6 @@ public class CourseEntryController implements Initializable {
                 // Enable Calculate GPA button if total credits reached
                 if (totalCreditsEntered >= requiredTotalCredits) {
                     calculateGPAButton.setDisable(false);
-                    totalCreditField.setDisable(true);
                 }
             }
 
@@ -198,7 +222,6 @@ public class CourseEntryController implements Initializable {
 
                 if (totalCreditsEntered < requiredTotalCredits) {
                     calculateGPAButton.setDisable(true);
-                    totalCreditField.setDisable(false);
                 }
 
                 showAlert(Alert.AlertType.INFORMATION, "Deleted", "Course deleted from database successfully!");
@@ -219,7 +242,6 @@ public class CourseEntryController implements Initializable {
             requiredTotalCredits = 0.0;
             currentCreditLabel.setText("0.0 / 0.0");
             calculateGPAButton.setDisable(true);
-            totalCreditField.setDisable(false);
             totalCreditField.setText("12.0");
             clearFields();
 

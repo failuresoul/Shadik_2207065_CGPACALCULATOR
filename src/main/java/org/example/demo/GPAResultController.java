@@ -10,6 +10,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.application.Platform;
+
+import java.util.ArrayList;
+import java.util.concurrent.CompletableFuture;
 
 public class GPAResultController {
 
@@ -21,10 +25,12 @@ public class GPAResultController {
 
     private ObservableList<Course> courseList;
     private String rollNumber;
+    private ConcurrentGPACalculator gpaCalculator;
 
     public void setCourseListAndRoll(ObservableList<Course> courseList, String rollNumber) {
         this.courseList = courseList;
         this.rollNumber = rollNumber;
+        this.gpaCalculator = new ConcurrentGPACalculator();
         displayResults();
     }
 
@@ -32,6 +38,7 @@ public class GPAResultController {
     public void setCourseList(ObservableList<Course> courseList) {
         this.courseList = courseList;
         this.rollNumber = courseList.isEmpty() ? "N/A" : courseList.get(0).getRollNumber();
+        this.gpaCalculator = new ConcurrentGPACalculator();
         displayResults();
     }
 
@@ -44,8 +51,23 @@ public class GPAResultController {
         // Clear previous content
         coursesVBox.getChildren().clear();
 
-        double totalWeightedPoints = 0.0;
-        double totalCredits = 0.0;
+        // Use CompletableFuture for asynchronous GPA calculation
+        CompletableFuture.supplyAsync(() -> {
+            // Calculate GPA using parallel processing
+            double gpa = gpaCalculator.calculateGPAParallel(new ArrayList<>(courseList));
+            double totalCredits = gpaCalculator.getTotalCreditsParallel(new ArrayList<>(courseList));
+
+            return new double[]{gpa, totalCredits};
+        }).thenAcceptAsync(results -> {
+            Platform.runLater(() -> {
+                double gpa = results[0];
+                double totalCredits = results[1];
+
+                // Display GPA and credits
+                gpaLabel.setText(String.format("%.2f", gpa));
+                totalCreditsLabel.setText(String.format("%.1f", totalCredits));
+            });
+        });
 
         // Display each course
         for (int i = 0; i < courseList.size(); i++) {
@@ -70,21 +92,16 @@ public class GPAResultController {
             courseBox.getChildren().addAll(courseHeader, courseName, courseCode,
                     courseCredit, teacher1, teacher2, grade);
             coursesVBox.getChildren().add(courseBox);
-
-            // Calculate totals
-            totalWeightedPoints += course.getWeightedGradePoint();
-            totalCredits += course.getCourseCredit();
         }
-
-        // Calculate and display GPA
-        double gpa = totalWeightedPoints / totalCredits;
-        gpaLabel.setText(String.format("%.2f", gpa));
-        totalCreditsLabel.setText(String.format("%.1f", totalCredits));
 
         // Set current date
         java.time.LocalDate currentDate = java.time.LocalDate.now();
         java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("MMMM dd, yyyy");
         resultDateLabel.setText(currentDate.format(formatter));
+
+        // Print statistics using concurrent calculator
+        ConcurrentGPACalculator.GPAStatistics stats = gpaCalculator.getStatistics(new ArrayList<>(courseList));
+        System.out.println("📊 GPA Statistics: " + stats);
     }
 
     @FXML
